@@ -228,9 +228,13 @@
 						<img src="<?php echo get_option('argon_toolbar_icon'); ?>">
 					</a>
 				<?php }?>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+				<!--顶栏ICON (Mobile)移动到此-->
+				<?php if (get_option('argon_toolbar_icon') != '') { /*顶栏ICON (Mobile)*/?>
+					<a class="navbar-brand navbar-icon-mobile" href="<?php echo get_option('argon_toolbar_icon_link'); ?>">
+						<img src="<?php echo get_option('argon_toolbar_icon'); ?>">
+					</a>
+				<?php }?>
+				<!--顶栏ICON (Mobile)移动到此-->
 				<?php /*顶栏标题*/?>
 				<a class="navbar-brand" href="<?php bloginfo('url'); ?>"><?php echo get_option('argon_toolbar_title') == '' ? bloginfo('name') : get_option('argon_toolbar_title'); ?></a>
 				<div class="navbar-collapse collapse" id="navbar_global">
@@ -316,11 +320,11 @@
 						</li>
 					</ul>
 				</div>
-				<?php if (get_option('argon_toolbar_icon') != '') { /*顶栏ICON (Mobile)*/?>
-					<a class="navbar-brand navbar-icon-mobile" href="<?php echo get_option('argon_toolbar_icon_link'); ?>">
-						<img src="<?php echo get_option('argon_toolbar_icon'); ?>">
-					</a>
-				<?php }?>
+				<!--moblie button移动到此-->
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!--moblie button移动到此-->
 				<div id="navbar_menu_mask" data-toggle="collapse" data-target="#navbar_global"></div>
 			</div>
 		</nav>
